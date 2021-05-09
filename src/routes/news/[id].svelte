@@ -1,7 +1,9 @@
 <script context="module">
+	import { path } from "../../constant";
+
 	export async function load({ page: { params }, fetch }) {
 		const { data } = await fetch(
-			`${import.meta.env.VITE_SVELTEKIT_API_PATH}/api/news/${params.id}`
+			`${path}/api/news/${params.id}`
 		).then(res => {
 			console.log(res);
 			return res.json();
@@ -18,6 +20,7 @@
 </script>
 
 <script>
+
 	export let title;
 	export let content;
 	export let publish_time;

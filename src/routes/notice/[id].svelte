@@ -1,8 +1,9 @@
 <script context="module">
+	import { path } from "../../constant";
+
 	export async function load({ page: { params }, fetch }) {
-		console.log(import.meta.env.VITE_SVELTEKIT_API_PATH);
 		const { data, code, msg } = await fetch(
-			`${import.meta.env.VITE_SVELTEKIT_API_PATH}/api/news/${params.id}`
+			`${path}/api/news/${params.id}`
 		).then(res => res.json());
 
 		if (code) {
@@ -22,6 +23,8 @@
 </script>
 
 <script>
+
+
 	export let title;
 	export let content;
 	export let publish_time;

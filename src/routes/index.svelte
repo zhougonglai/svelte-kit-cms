@@ -1,11 +1,11 @@
 <script context="module">
+	import { path } from "../constant";
+
+
 	export async function load({ fetch }) {
 		const {
 			data: { total, current_page, list }
-		} = await fetch(
-			`${
-				import.meta.env.VITE_SVELTEKIT_API_PATH
-			}/api/news?${new URLSearchParams({
+		} = await fetch(`${path}/api/news?${new URLSearchParams({
 				size: 15,
 				class_type: 0,
 				support_type: 1

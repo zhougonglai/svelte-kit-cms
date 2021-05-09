@@ -1,12 +1,13 @@
 <script>
 	export let activity;
+	import { file } from '../../constant';
 </script>
 
 <li class="active flex px-4 hover:shadow  cursor-pointer overflow-hidden">
 	<div class="cover flex place-content-center place-items-center">
 		<img
 			class="rounded"
-			src={`${import.meta.env.VITE_SVELTEKIT_FILEPATH}${activity.image}`}
+			src={`${file}${activity.image}`}
 			alt={activity.title}
 		/>
 	</div>

@@ -2,15 +2,13 @@
 	import BouncingLoader from '$lib/BouncingLoader.svelte';
 	import { onMount } from 'svelte';
 	import Activity from './_active.svelte';
+	import { path } from '../../constant';
 
 	let activitys = [];
 	let loading = true;
 
 	async function getActivitys() {
-		loading = true;
-		const { data } = await fetch(
-			`${import.meta.env.VITE_SVELTEKIT_API_PATH}/api/activity`
-		).then(res => res.json());
+		const { data } = await fetch(`${path}/api/activity`).then(res => res.json());
 
 		return data.list;
 	}

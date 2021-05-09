@@ -1,4 +1,6 @@
 <script>
+import { file, path } from '../../constant';
+
 	import BouncingLoader from '$lib/BouncingLoader.svelte';
 	import { onMount } from 'svelte';
 	let newses = [],
@@ -8,7 +10,7 @@
 		loading = true;
 		const { data } = await fetch(
 			`${
-				import.meta.env.VITE_SVELTEKIT_API_PATH
+				path
 			}/api/news?${new URLSearchParams({
 				class_type: 2,
 				support_type: 1
@@ -47,7 +49,7 @@
 					>
 						<div class="cover mr-2 row-span-4 flex items-center justify-center">
 							<img
-								src={`${import.meta.env.VITE_SVELTEKIT_FILEPATH}${
+								src={`${file}${
 									news.image_url
 								}`}
 								alt={news.title}

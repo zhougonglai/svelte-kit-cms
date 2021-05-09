@@ -1,4 +1,6 @@
 <script>
+	import { path } from '../../constant';
+
 	import BouncingLoader from '$lib/BouncingLoader.svelte';
 	import Pagination from '$lib/Pagination.svelte';
 	import { onMount } from 'svelte';
@@ -9,9 +11,7 @@
 	async function getNews(page = 1) {
 		loading = true;
 		const { data } = await fetch(
-			`${
-				import.meta.env.VITE_SVELTEKIT_API_PATH
-			}/api/news?${new URLSearchParams({
+			`${path}/api/news?${new URLSearchParams({
 				class_type: 0,
 				support_type: 1,
 				page
