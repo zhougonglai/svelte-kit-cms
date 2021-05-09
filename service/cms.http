@@ -1,0 +1,20 @@
+@Host = https://webapi.bohejiasuqi.com/
+@jsonType = application/json
+
+###
+
+###
+
+
+// support_type 支持类型  0:all 1:pc 2:移动端，3，windows客户端多个英文以逗号隔开
+// class_type  类别    0，默认；1，帮助文档 ;2, 游戏资讯;3,相关问答，多个英文以逗号隔开，4公益活动
+// region_code 	地区code
+// key_words 关键词
+// label
+
+GET {{Host}}api/news
+?page=1
+&size=10
+&class_type=0
+&support_type=1
+&region_code=0
